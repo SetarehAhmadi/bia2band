@@ -7,30 +7,36 @@ const { Title } = Typography;
 const DrawerContent = ({
 	language = "fa",
 	changeLanguage,
-	themeMode = "light",
-	changeTheme,
+	// theme
+	themeAlgorithm = "defaultAlgorithm",
 	fontMode = "default",
-	changeFontMode,
-	tokens = {},
 	selectedToken = "default",
-	changeTokenMode,
+	color = {},
+	// handles
+	changeTheme,
+	changeFontMode,
+	changeColorMode,
 }) => {
 	const { t } = useTranslation();
 	const colors = useMemo(
 		() =>
-			Object.entries(tokens).map(([key, { colorPrimary }]) => ({
+			Object.entries(color).map(([key, { colorPrimary }]) => ({
 				style: { backgroundColor: colorPrimary },
 				value: key,
 			})),
-		[tokens],
+		[color],
 	);
 	return (
 		<Row gutter={[16, 16]}>
 			<Title level={5}>{t("layouts.mode")}</Title>
 			<Col span={24}>
-				<Radio.Group buttonStyle="solid" defaultValue={themeMode} onChange={(e) => changeTheme(e.target.value)}>
-					<Radio.Button value="light">{t("layouts.light")}</Radio.Button>
-					<Radio.Button value="dark">{t("layouts.dark")}</Radio.Button>
+				<Radio.Group
+					buttonStyle="solid"
+					defaultValue={themeAlgorithm}
+					onChange={(e) => changeTheme(e.target.value)}
+				>
+					<Radio.Button value="defaultAlgorithm">{t("layouts.light")}</Radio.Button>
+					<Radio.Button value="darkAlgorithm">{t("layouts.dark")}</Radio.Button>
 				</Radio.Group>
 			</Col>
 			<Title level={5}>{t("layouts.theme")}</Title>
@@ -40,7 +46,7 @@ const DrawerContent = ({
 					value={selectedToken}
 					optionType="button"
 					buttonStyle="solid"
-					onChange={(e) => changeTokenMode(e.target.value)}
+					onChange={(e) => changeColorMode(e.target.value)}
 				>
 					<Radio.Button value="light">{t("layouts.light")}</Radio.Button>
 				</Radio.Group>
@@ -53,7 +59,7 @@ const DrawerContent = ({
 					onChange={(e) => changeFontMode(e.target.value)}
 				>
 					<Radio.Button value="default">{t("layouts.fontDefault")}</Radio.Button>
-					<Radio.Button value="small">{t("layouts.fontSmall")}</Radio.Button>
+					<Radio.Button value="compactAlgorithm">{t("layouts.fontSmall")}</Radio.Button>
 				</Radio.Group>
 			</Col>
 			<Title level={5}>{t("layouts.language")}</Title>

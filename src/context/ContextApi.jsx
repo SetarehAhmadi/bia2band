@@ -16,7 +16,7 @@ function ContextApi({ children }) {
 	// language
 	const { language, changeLanguage, direction, locale, placement } = useLanguage();
 	// theme
-	const { themeAntMode, fontAntMode, fontMode, selectedToken, tokens, ...handles } = useTheme(theme);
+	const { color = {}, algorithm = [], ...handles } = useTheme(theme);
 	// initialize context
 	useEffect(() => {
 		const userPromise = dispatch(getCurrentUser({ callApi }));
@@ -26,19 +26,16 @@ function ContextApi({ children }) {
 		};
 	}, [locale, dispatch]);
 	// return
-	const themColorObject = tokens[selectedToken];
 	return (
 		<AppContext.Provider
 			value={{
 				language,
 				placement,
 				direction,
-				// themeHandlers
-				...handles,
 				changeLanguage,
-				fontMode,
-				tokens,
-				selectedToken,
+				// theme
+				...handles,
+				color,
 				// callApi
 				callApi,
 			}}
@@ -47,13 +44,17 @@ function ContextApi({ children }) {
 				locale={locale}
 				direction={direction}
 				theme={{
-					algorithm: [themeAntMode, ...fontAntMode],
-					token: themColorObject,
+					algorithm,
+					token: color,
 					components: {
 						Carousel: {
-							colorBgContainer: themColorObject?.colorPrimary,
+							colorBgContainer: color?.colorPrimary,
 							dotWidth: 8,
 							dotHeight: 8,
+						},
+						Button: {
+							paddingInline: 20,
+							paddingInlineSM: 20,
 						},
 					},
 				}}

@@ -1,76 +1,43 @@
 import { useEffect, useState } from "react";
 
+import colors from "@/theme";
 import { getFromStorage, setToStorage } from "@/utils/storage";
-import tokens from "@/theme";
-
-let defaultTheme = getFromStorage("theme") || "light";
-let defaultFontSize = getFromStorage("fontSize") || "default";
-let defaultToken = getFromStorage("tokenColor") || "default";
 
 const useTheme = (theme) => {
-	const [themeMode, setThemeMode] = useState("light");
-	const [fontMode, setFontSize] = useState("default");
-	const [selectedToken, setToken] = useState("default");
+	const [themeAlgorithm, setThemeAlgorithm] = useState("defaultAlgorithm");
+	const [fontAlgorithm, setFontSize] = useState("default");
+	const [colorAlgorithm, setColor] = useState("default");
 	// themeAntMode
 	const changeTheme = (mode) => {
-		// light, dark
-		setThemeMode(mode);
-		// setToStorage
+		setThemeAlgorithm(mode);
 		setToStorage("theme", mode);
 	};
-	let themeAntMode;
-	switch (themeMode) {
-		case "light":
-			themeAntMode = theme["defaultAlgorithm"];
-			break;
-		case "dark":
-			themeAntMode = theme["darkAlgorithm"];
-			break;
-		default:
-			themeAntMode = theme["defaultAlgorithm"];
-			break;
-	}
 	// fontAntMode
 	const changeFontMode = (mode) => {
-		setFontSize(mode); // small, default
-		// setToStorage
+		setFontSize(mode);
 		setToStorage("fontSize", mode);
 	};
-	let fontAntMode;
-	switch (fontMode) {
-		case "default":
-			fontAntMode = [];
-			break;
-		case "small":
-			fontAntMode = [theme["compactAlgorithm"]];
-			break;
-		default:
-			fontAntMode = [];
-			break;
-	}
 	// tokenMode
-	const changeTokenMode = (mode) => {
-		setToken(mode);
-		// setToStorage
+	const changeColorMode = (mode) => {
+		setColor(mode);
 		setToStorage("tokenColor", mode);
 	};
 	// init theme
 	useEffect(() => {
-		changeTheme(defaultTheme);
-		changeFontMode(defaultFontSize);
-		changeTokenMode(defaultToken)
+		changeTheme(getFromStorage("theme") || "defaultAlgorithm");
+		changeFontMode(getFromStorage("fontSize") || "default");
+		changeColorMode(getFromStorage("tokenColor") || "default");
 	}, []);
 	// return
 	return {
 		changeTheme,
-		themeAntMode,
-		themeMode,
 		changeFontMode,
-		fontAntMode,
-		fontMode,
-		changeTokenMode,
-		tokens,
-		selectedToken,
+		changeColorMode,
+		themeAlgorithm,
+		fontAlgorithm,
+		colorAlgorithm,
+		color: colors[colorAlgorithm],
+		algorithm: [theme[themeAlgorithm], theme[fontAlgorithm]],
 	};
 };
 
