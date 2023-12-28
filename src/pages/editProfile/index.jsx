@@ -6,27 +6,27 @@ import Personal from "./components/personal";
 
 const EditProfile = () => (
 	<div className="pb-10 pt-5">
-    	<div className="mb-5">
-			<Personal/>
+		<div className="mb-5">
+			<Personal />
 		</div>
 		<div className="mb-5">
-			<Connect/>
+			<Connect />
 		</div>
 		<div className="mb-5">
-			<About/>
+			<About />
 		</div>
 		<div className="mb-5">
-			<Profesional/>
+			<Profesional />
 		</div>
 		<div className="mb-5">
-			<FurtherInformation/>
+			<FurtherInformation />
 		</div>
-				
-			
-    </div>
-			
-		
-	
+
+
+	</div>
+
+
+
 );
 
 export default EditProfile;
