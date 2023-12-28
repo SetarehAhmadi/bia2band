@@ -26,6 +26,11 @@ const mainRoutes = {
 			id: "about",
 			lazy: async () => ({ Component: (await import("../pages/about")).default }),
 		},
+		{
+			path: "editProfile",
+			id: "editProfile",
+			lazy: async () => ({ Component: (await import("../pages/editProfile")).default }),
+		},
 	],
 };
 
