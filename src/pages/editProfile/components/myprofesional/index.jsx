@@ -18,55 +18,55 @@ const Profesional = () => {
                 />
                 <Form name="about-form" className="about-form mt-5 fs-sx" layout="vertical">
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <Selects
                                 name="expertise"
-                                label={<span className="text-sm">حوزه تخصصی من</span>}
+                                label="حوزه تخصصی من"
                                 placeholder={t("انتخاب کنید")}
                                 options={[
                                     { name: 'ترانه سرا', id: '1' },
-                                    { label: '2', value: 'خواننده' },
-                                    { label: 'نوازنده', value: 'نوازنده' },
-                                    { label: 'سرپرست گروه', value: 'سرپرست گروه' },
-                                    { label: 'صاحب کسب و کار', value: 'صاحب کسب و کار' },
+                                    { name: 'خواننده', id: '2' },
+                                    { name: 'نوازنده', id: '3' },
+                                    { name: 'سرپرست گروه', id: '4' },
+                                    { name: 'صاحب کسب و کار', id: '5' },
 
                                 ]}
 
                             />
                         </Col>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <Selects
                                 name="place"
                                 label="مکان های اختصاصی"
                                 placeholder={t("انتخاب کنید")}
                                 options={[
-                                    { label: 'پلاتو', value: '1' },
-                                    { label: 'استودیو', value: 'خواننده' },
-                                    { label: 'زیر منو', value: 'نوازنده' },
-                                    { label: 'زیر منو', value: 'سرپرست گروه' },
+                                    { name: 'پلاتو', id: '1' },
+                                    { name: 'استودیو', id: '2' },
+                                    { name: 'زیر منو', id: '3' },
+                                    { name: 'زیر منو', id: '4' },
 
                                 ]}
 
                             />
                         </Col>
                     </Row>
-                    <Row gutter={[8, 8]} align={"center"} >
-                        <Col xs={28} md={16} lg={12}>
+                    <Row gutter={[8, 8]} justify={"center"} align={"middle"} >
+                        <Col xs={24} md={16} lg={8}>
                             <video controls poster={img} height={200} width={200} className="rounded">
                                 <source src={img} type="video/mp4" />
                             </video>
                         </Col>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={20} md={16} lg={8}>
                             <img src={img} width={200} className="rounded" />
                         </Col>
                     </Row>
-                    <Row gutter={[8, 8]} align={"center"} className="mt-5">
-                        <Col xs={28} md={16} lg={12}>
+                    <Row gutter={[8, 8]} justify={"center"} align={"middle"} className="mt-5">
+                        <Col xs={22} md={16} lg={10}>
                             <Buttons content={t("+ افزودن ویدئو معرفی")} type="default"
                                 size="small" htmlType="button"
                             />
                         </Col>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={20} md={16} lg={8}>
                             <Buttons content={t("+ افزودن تصویر")} type="default"
                                 size="small" htmlType="button"
                             />

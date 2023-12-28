@@ -4,7 +4,7 @@ import img from "../test.jpg";
 import { Selects } from "@components";
 import { useTranslation } from "react-i18next";
 import { AppstoreOutlined } from "@ant-design/icons";
-import Inputs from "../../../../components/input"
+import Inputs from "../../../../components/input";
 import Regex from "../../../../utils/regex";
 
 
@@ -22,16 +22,16 @@ const Personal = () => {
 				/>
 				<Form name="personal-form" className="search-form mt-5 fs-sx" layout="vertical">
 					<Row gutter={[8, 8]} align={"right"}>
-						<Col xs={28} md={16} lg={12}>
+						<Col xs={24} md={16} lg={12}>
 							<Inputs
 								name="name"
 								label="نام"
 								placeholder={t("سامان حشمتی")}
 							/>
 						</Col>
-						<Col xs={28} md={16} lg={12}>
+						<Col xs={24} md={16} lg={12}>
 							<Inputs
-							
+
 								name="email"
 								label="ایمیل"
 
@@ -40,7 +40,7 @@ const Personal = () => {
 						</Col>
 					</Row>
 					<Row gutter={[8, 8]} align={"middle"}>
-						<Col xs={28} md={16} lg={12}>
+						<Col xs={24} md={16} lg={12}>
 							<Selects
 								name="birthdate"
 								label="سال تولد"
@@ -52,20 +52,19 @@ const Personal = () => {
 								}
 							/>
 						</Col>
-						<Col xs={28} md={16} lg={12}>
+						<Col xs={24} md={16} lg={12}>
 							<Inputs
 								name="mobile"
 								label="شماره تماس"
 								pattern={Regex.mobileNumber}
-							patternMessage={"صحیح نیست"}
-							maxLength={11}
-
+								patternMessage={"صحیح نیست"}
+								maxLength={11}
 								placeholder={t("09121558087")}
 							/>
 						</Col>
 					</Row>
 					<Row gutter={[8, 8]} align={"middle"}>
-						<Col xs={28} md={16} lg={12}>
+						<Col xs={24} md={16} lg={12}>
 							<Selects
 								name="city"
 								label="محل سکونت"

@@ -80,12 +80,8 @@ const FurtherInformation = () => {
                         <Col xs={22} md={10} lg={8}>
                             <Checkbox.Group style={{ width: '100%' }} defaultValue={"B"} >
                                 <Row>
-                                    <Col span={8}>
                                         <Checkbox value="A" disabled>ندارد</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="B">دارد</Checkbox>
-                                    </Col>
                                 </Row>
                             </Checkbox.Group>
                         </Col>
@@ -105,13 +101,13 @@ const FurtherInformation = () => {
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <label>امکان ضبط کلیپ ویدئویی دارد؟</label>
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
                         <Col xs={22} md={10} lg={8}>
-                            <Checkbox.Group style={{ width: '100%' }} >
+                            <Checkbox.Group style={{ width: '100%' }} defaultValue={"B"} >
                                 <Row>
                                     <Col span={8}>
                                         <Checkbox value="A" defaultChecked>ندارد</Checkbox>
@@ -130,13 +126,13 @@ const FurtherInformation = () => {
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <label>کدامیک از سازهای زیر را موجود دارد؟</label>
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={24} md={24} lg={24}>
-                            <Checkbox.Group style={{ width: '100%' }} >
+                        <Col xs={24} md={16} lg={12}>
+                            <Checkbox.Group style={{ width: '100%' }} defaultValue={"A, H"} >
                                 <div className="flex  my-2 justify-between align-middle items-center gap-2">
                                         <Checkbox value="A" defaultChecked>هیچ سازی ندارد</Checkbox>
                                         <Checkbox value="B" disabled>درامز</Checkbox>
@@ -151,44 +147,30 @@ const FurtherInformation = () => {
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <label>سایر ویژگی ها را مشخص کنید.</label>
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
-                            <Checkbox.Group style={{ width: '100%' }} >
-                                <Row>
-                                    <Col span={8}>
+                        <Col xs={24} md={16} lg={12}>
+                            
+                            <Checkbox.Group style={{ width: '100%' }} defaultValue={["A", "H"]}>
+                            <div className="flex  my-2 justify-between align-middle items-center gap-5">
+
                                         <Checkbox value="A" defaultChecked>آینه</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="B" disabled>تخته وایت برد</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="C" disabled>صندلی</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="D" disabled>نمایشگر</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="E" disabled>پایه نت</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="F" disabled>ویدئو پروژکتور</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="G" disabled>سیستم تهویه</Checkbox>
-                                    </Col>
-                                    <Col span={8}>
                                         <Checkbox value="H" defaultChecked>سایرسازها</Checkbox>
-                                    </Col>
-                                </Row>
+                                        </div>
                             </Checkbox.Group>
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <label>لطفا روزهای کاری را مشخص کنید.</label>
                         </Col>
                     </Row>
@@ -220,23 +202,25 @@ const FurtherInformation = () => {
                         <Col xs={20} md={8} lg={6}>
                             <Inputs
                                 name="time1"
-                                placeholder={
-                                    <div className="flex gap-2 align-middle items-center">
-                                        <AppstoreOutlined className="pb-1" />
-                                        <span>11</span>
-                                    </div>
-                                }
+                                placeholder="11"
+                               // placeholder={
+                                 //   <div className="flex gap-2 align-middle items-center">
+                                 //       <AppstoreOutlined className="pb-1" />
+                                  //      <span>11</span>
+                                    //</div>
+                               // }
                             />
                         </Col>
                         <Col xs={20} md={8} lg={6}>
                             <Inputs
                                 name="time2"
-                                placeholder={
-                                    <div className="flex gap-2 align-middle items-center">
-                                        <AppstoreOutlined className="pb-1" />
-                                        <span>22</span>
-                                    </div>
-                                }
+                                placeholder="22"
+                              //  placeholder={
+                                //    <div className="flex gap-2 align-middle items-center">
+                                  //      <AppstoreOutlined className="pb-1" />
+                                  //      <span>22</span>
+                                   // </div>
+                                //}
                             />
                         </Col>
                         <Col xs={20} md={8} lg={4}>
@@ -244,28 +228,25 @@ const FurtherInformation = () => {
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
+
                         <Col xs={22} md={10} lg={8}>
                             <label>امکان رزرو از طریق سایت بیاتوبند؟</label>
                         </Col>
 
-                        <Col xs={18} md={8} lg={4}>
-                            <Checkbox.Group style={{ width: '100%' }} >
-                                <Col span={8}>
+                        <Col xs={22} md={10} lg={8} >
+                            <Checkbox.Group style={{ width: '100%' }} defaultValue={"A"}>
                                     <Checkbox value="A" defaultChecked>می خواهم</Checkbox>
-                                </Col>
-                                <Col span={8}>
                                     <Checkbox value="B" disabled>نمی خواهم</Checkbox>
-                                </Col>
                             </Checkbox.Group>
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <label>توضیحات دلخواه</label>
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={24} md={12} lg={8}>
+                        <Col xs={24} md={24} lg={24}>
                             <TextArea
                                 name="description"
                                 autoSize={10}
@@ -273,8 +254,8 @@ const FurtherInformation = () => {
                             />
                         </Col>
                     </Row>
-                    <Row gutter={[8, 8]} align={"left"}>
-                        <Col xs={20} md={8} lg={4}>
+                    <Row gutter={[8, 8]} justify={"end"} align={"middle"}>
+                        <Col xs={20} md={10} lg={5}>
                             <Buttons content={t("اضافه کردن مکان جدید")} type="default"
                                 size="small" htmlType="button"
                             />

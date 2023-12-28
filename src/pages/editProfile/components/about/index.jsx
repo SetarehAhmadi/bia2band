@@ -15,7 +15,7 @@ const About = () => {
                 <Meta
                     title={title}
                 />
-                <Form name="about-form" className="about-form mt-5 fs-sx" layout="vertical">
+                <Form name="about-form" className="about-form mt-5" layout="vertical">
                     <Row gutter={[8, 8]} align={"middle"}>
                         <Col xs={24} md={24} lg={24}>
                             <TextArea
