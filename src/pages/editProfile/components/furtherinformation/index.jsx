@@ -19,7 +19,7 @@ const FurtherInformation = () => {
                 />
                 <Form name="personal-form" className="search-form mt-5 fs-sx" layout="vertical">
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <Selects
                                 name="address"
                                 label="آدرس"
@@ -31,7 +31,7 @@ const FurtherInformation = () => {
                                 }
                             />
                         </Col>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <Inputs
                                 name="phone"
                                 label="شماره محل کار"
@@ -72,7 +72,7 @@ const FurtherInformation = () => {
                         </Col>
                     </Row>
                     <Row gutter={[8, 8]} align={"middle"}>
-                        <Col xs={28} md={16} lg={12}>
+                        <Col xs={24} md={16} lg={12}>
                             <label>امکان ضبط کلیپ ویدئویی دارد؟</label>
                         </Col>
                     </Row>
